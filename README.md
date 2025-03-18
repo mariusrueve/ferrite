@@ -9,13 +9,6 @@
 
 Ferrite is a modern, high-performance alternative to existing cheminformatics toolkits like RDKit. Built from the ground up in Rust, it provides a memory-safe, concurrent, and blazingly fast toolkit for working with chemical structures and properties.
 
-## Why Ferrite?
-
-- **Performance**: Leverage Rust's zero-cost abstractions and fearless concurrency
-- **Safety**: Eliminate memory errors and race conditions common in C++ libraries
-- **Modern API**: Intuitive, well-documented interfaces built for today's workflows
-- **Lightweight**: Minimal dependencies and efficient memory usage
-
 ## Current Status
 
 🚧 **Early Development** 🚧
@@ -36,7 +29,7 @@ Ferrite is currently in the early development phase. We're building the core mol
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/ferrite.git
+git clone https://github.com/mariusrueve/ferrite.git
 cd ferrite
 
 # Build the library
@@ -55,7 +48,7 @@ We welcome contributors of all experience levels! If you're interested in chemin
 3. **Testing**: Add test cases, especially with real-world molecules
 4. **Design**: Provide input on the API design and feature priorities
 
-Check out our [issues](https://github.com/yourusername/ferrite/issues) page for good starting points, or open a new issue with your ideas!
+Check out our [issues](https://github.com/mariusrueve/ferrite/issues) page for good starting points, or open a new issue with your ideas!
 
 Reach out in the discussions tab or join our community chat to get involved.
 
