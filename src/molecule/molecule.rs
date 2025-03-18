@@ -107,4 +107,48 @@ impl Molecule {
         
         formula
     }
+
+    pub fn print_connectivity(&self) {
+        println!("Molecule Connectivity:");
+        println!("Atoms:");
+        for (idx, atom) in self.atoms.iter().enumerate() {
+            println!("  [{}] {} (atomic number: {})", idx, atom.symbol(), atom.atomic_number);
+        }
+        
+        println!("\nBonds:");
+        for (idx, bond) in self.bonds.iter().enumerate() {
+            let begin_atom = &self.atoms[bond.begin_atom_idx];
+            let end_atom = &self.atoms[bond.end_atom_idx];
+            let bond_symbol = match bond.bond_type {
+                BondType::Single => "-",
+                BondType::Double => "=",
+                BondType::Triple => "≡",
+                BondType::Aromatic => "~",
+            };
+            
+            println!("  [{}] {}({}) {} {}({})", 
+                idx,
+                begin_atom.symbol(), 
+                bond.begin_atom_idx,
+                bond_symbol,
+                end_atom.symbol(),
+                bond.end_atom_idx
+            );
+        }
+        
+        println!("\nConnectivity:");
+        for (atom_idx, neighbors) in self.adjacency_list.iter().enumerate() {
+            if !neighbors.is_empty() {
+                print!("  {}({}) → ", self.atoms[atom_idx].symbol(), atom_idx);
+                
+                let connections: Vec<String> = neighbors.iter()
+                    .map(|&n| format!("{}({})", self.atoms[n].symbol(), n))
+                    .collect();
+                    
+                println!("{}", connections.join(", "));
+            }
+        }
+        
+        println!("\nMolecular Formula: {}", self.get_molecular_formula());
+    }
 }
