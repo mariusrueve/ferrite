@@ -27,3 +27,21 @@ fn test_molecular_formula() {
     
     assert_eq!(water.get_molecular_formula(), "H2O");
 }
+
+#[test]
+fn test_molecular_weight() {
+    // Create methane (CH4)
+    let mut methane = Molecule::new();
+    let c_idx = methane.add_atom(Atom::new(6));
+    
+    for _ in 0..4 {
+        let h_idx = methane.add_atom(Atom::new(1));
+        methane.add_bond(c_idx, h_idx, BondType::Single).unwrap();
+    }
+    
+    // Expected weight: C (12.011) + 4*H (4*1.008) = 16.043
+    let expected_weight = 16.043;
+    let calculated_weight = methane.get_molecular_weight();
+    
+    assert!((calculated_weight - expected_weight).abs() < 0.001);
+}
