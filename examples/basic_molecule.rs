@@ -115,6 +115,7 @@ fn main() {
     println!("Number of atoms: {}", methane.atom_count());
     println!("Number of bonds: {}", methane.bond_count());
     methane.print_connectivity();
+    println!("Molecular weight of methane: {:.3} g/mol", methane.get_molecular_weight());
 
     // Create caffeine molecule
     println!("\n--- Creating Caffeine (C8H10N4O2) ---");
@@ -123,4 +124,6 @@ fn main() {
     println!("Number of atoms: {}", caffeine.atom_count());
     println!("Number of bonds: {}", caffeine.bond_count());
     caffeine.print_connectivity();
-}
+
+    // Calculate molecular weight
+    println!("Molecular weight of caffeine: {:.3} g/mol", caffeine.get_molecular_weight());}
