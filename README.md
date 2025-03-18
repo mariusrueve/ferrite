@@ -48,10 +48,6 @@ We welcome contributors of all experience levels! If you're interested in chemin
 3. **Testing**: Add test cases, especially with real-world molecules
 4. **Design**: Provide input on the API design and feature priorities
 
-Check out our [issues](https://github.com/mariusrueve/ferrite/issues) page for good starting points, or open a new issue with your ideas!
-
-Reach out in the discussions tab or join our community chat to get involved.
-
 ## License
 
 Ferrite is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
