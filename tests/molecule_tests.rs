@@ -12,6 +12,10 @@ fn test_molecule_creation() {
     assert_eq!(mol.atom_count(), 2);
     mol.add_bond(a1, a2, BondType::Single).unwrap();
     assert_eq!(mol.bond_count(), 1);
+
+    if let Some(bond) = mol.get_bond(a1){
+       assert_eq!(bond.bond_type, BondType::Single)
+    }
 }
 
 #[test]
